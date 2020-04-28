@@ -305,7 +305,7 @@ function firstNamesAllCaps(runners) {
 */
 function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
-  let j = runners.filter(val => val.shirt_size === 'S');
+  let j = runners.filter(val => val.shirt_size === tShirtSize);
   return j;
 }
 
@@ -333,11 +333,13 @@ function tallyUpDonations(/* CODE HERE */) {
  * @instructions
  * Study the code for counter1 and counter2. Answer the questions below.
  *
- * 1. What is the difference between counter1 and counter2?
+ * 1. What is the difference between counter1 and counter2? counter1 allows access to both outer and inner functions
  *
- * 2. Which of the two uses a closure? How can you tell?
+ * 2. Which of the two uses a closure? they both use closure
+ How can you tell? cuase they return something
  *
- * 3. In what scenario would the counter1 code be preferable? In what scenario would counter2 be better?
+ * 3. In what scenario would the counter1 code be preferable? when you'd want to have access to functions inside other functions
+ In what scenario would counter2 be better? simple operations
  *
 */
 
