@@ -93,8 +93,7 @@ function processLastItem(stringList, callback) {
 */
 function processSum(num1, num2, callback) {
   /* CODE HERE */
-  let x = 1;
-  return callback(x);
+  return callback(num1 + num2);
 }
 
 /**
@@ -117,14 +116,7 @@ function processSum(num1, num2, callback) {
 */
 function processProduct(num1, num2, callback) {
   /* CODE HERE */
-  function multiplyBy(num1) {
-  return function(num2) {
-    return num1 * num2;
-  }
-}
-var multiplyByTwo = multiplyBy(2);
-let arr = [num1,num2];
-let arrDoubled = arr.map(multiplyByTwo);
+  return callback(num1 * num2);
 }
 /**
  * ### Challenge `processDuplicateFree`
