@@ -93,7 +93,8 @@ function processLastItem(stringList, callback) {
 */
 function processSum(num1, num2, callback) {
   /* CODE HERE */
-  return callback();
+  let x = 0;
+  return callback(x);
 }
 
 /**
@@ -114,7 +115,7 @@ function processSum(num1, num2, callback) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
 }
 
@@ -136,8 +137,9 @@ function processProduct(/* CODE HERE */) {
  * [2] Invoking `processDuplicateFree` passing `[1,1,2,2,3]` and `(arr) => arr.length`,
  * should return 3.
 */
-function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */) {
+function processDuplicateFree(list, callback) {
   /* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS */
+  return callback([...new Set(list)]);
 }
 
 /////////////// HIGHER-ORDER ARRAY METHODS ///////////////
@@ -151,7 +153,7 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  * Implement this function using forEach().
  *
  * @param strings an array of strings.
- * @returns an array of equal length to `strings` containing lowercased versions of each string.
+ * @returns an array of equal length to `ystrings` containing lowercased versions of each string.
  *
  *
  * Examples of usage of this function:
@@ -159,8 +161,14 @@ function processDuplicateFree(/* CODE HERE ONLY AFTER COMPLETING ALL OTHER TASKS
  *
  * [2] Invoking `lowerCaseStrings` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function lowerCaseStrings(/* code here */) {
+function lowerCaseStrings(strings) {
   /* code here */
+  let ystrings = [];
+
+  strings.forEach(function(item){
+      ystrings.push(item.toString().toLowerCase());
+  });
+  return ystrings;
 }
 
 /**
@@ -178,10 +186,15 @@ function lowerCaseStrings(/* code here */) {
  *
  * [2] Invoking `isItAnApple` with `['a', 'b', 'c' ]` will return `[ false, false, false ]`.
 */
-function isItAnApple(/* code here */) {
+function isItAnApple(strings) {
   /* code here */
-}
-
+  let fruits = strings.map(function(x) {
+    if (x != 'apple') {
+      return false;
+    }else{return true;}
+});
+  return fruits;
+  }
 /**
  * ### Challenge `removeApple`
  *
@@ -198,8 +211,12 @@ function isItAnApple(/* code here */) {
  *
  * [2] Invoking `removeApple` with `['a', 'b', 'c' ]` will return `[ 'a', 'b', 'c' ]`.
 */
-function removeApple(/* code here */) {
+function removeApple(strings) {
   /* code here */
+  let valueToRemove = 'apple';
+  let filteredItems = strings.filter(strings => strings !== valueToRemove);
+
+  return filteredItems;
 }
 
 /**
