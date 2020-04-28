@@ -93,7 +93,7 @@ function processLastItem(stringList, callback) {
 */
 function processSum(num1, num2, callback) {
   /* CODE HERE */
-  let x = 0;
+  let x = 1;
   return callback(x);
 }
 
@@ -117,8 +117,15 @@ function processSum(num1, num2, callback) {
 */
 function processProduct(num1, num2, callback) {
   /* CODE HERE */
+  function multiplyBy(num1) {
+  return function(num2) {
+    return num1 * num2;
+  }
 }
-
+var multiplyByTwo = multiplyBy(2);
+let arr = [num1,num2];
+let arrDoubled = arr.map(multiplyByTwo);
+}
 /**
  * ### Challenge `processDuplicateFree`
  * THIS IS A STRETCH PROBLEM! ATTEMPT ONLY AFTER COMPLETING ALL NON-STRETCH CHALLENGES!
@@ -304,8 +311,10 @@ function firstNamesAllCaps(runners) {
  * @returns an array containing only the runners that use the given `tShirtSize`.
  * The runners in the array appear in the same order they appear in the `runners` array.
 */
-function getRunnersByTShirtSize(runners) {
+function getRunnersByTShirtSize(runners, tShirtSize) {
   /* CODE HERE */
+  let j = runners.filter(val => val.shirt_size === 'S');
+  return j;
 }
 
 /**
